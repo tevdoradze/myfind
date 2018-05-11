@@ -1,0 +1,30 @@
+This project implements some behaviour of find.
+To create the binary file write "make" in the terminal.
+To generate the documentation of the project, write "make doc" in the terminal.
+To launch a set of tests write "make test"
+To clean everything created by make, write "make clean".
+
+To use the algorithm write "./myfind [option] [folders]"
+
+Options:
+-d : myfind process each directory’s content before the directory itself. This option follows the
+BSD-family find, and not GNU-find, where -d is only an expression (not an option). By default, myfind
+visits directories in pre-order (before their contents).
+
+-H: myfind does not follow symbolic links, except if it is given in the command line.
+
+-L: myfind follows symbolic links.
+
+-P: myfind never follows symbolic links. This is the default behavior.
+
+If an error occurs while parsing the command line, the program write an error and
+stderr and exit 1. If an error occurs while parsing files, the programm continue it's flow and
+return 1 at the end of it. In other case the function returns 1.
+
+Exemples :
+make
+./myfind
+./myfind -d folder1
+./myfind -H . folder1 folder2
+./myfind -d -P -L folder1 folder2 folder3
+make cleare
